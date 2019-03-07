@@ -45,6 +45,8 @@ const SearchInput = ({ onClose }) => {
     <SearchFormLayout
       onSubmit={handleSubmit}
       onClose={handleClose}
+      inputIsFocused={inputIsFocused}
+      expandForm={expandForm}
       searchTextInput={(
         <SearchTextInput
           searchText={state.searchText}
@@ -67,7 +69,6 @@ const SearchInput = ({ onClose }) => {
           }, {})}
         />
       )}
-      inputIsFocused={inputIsFocused}
     />
   );
 };

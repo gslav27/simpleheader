@@ -31,13 +31,14 @@ const SearchFormLayout = ({
   onSubmit,
   onClose,
   inputIsFocused,
+  expandForm,
   searchTextInput,
   searchParams,
 }) => (
   <Form onSubmit={onSubmit}>
     {searchTextInput}
     <SubmitButton />
-    {inputIsFocused && searchParams}
+    {(inputIsFocused && expandForm) && searchParams}
     <BackDrop onClick={onClose} />
   </Form>
 );
@@ -47,6 +48,7 @@ SearchFormLayout.propTypes = {
   onSubmit:         PropTypes.func.isRequired,
   onClose:          PropTypes.func.isRequired,
   inputIsFocused:   PropTypes.bool.isRequired,
+  expandForm:       PropTypes.bool.isRequired,
   searchTextInput:  PropTypes.node.isRequired,
   searchParams:     PropTypes.node.isRequired,
 };
